@@ -48,11 +48,12 @@ class Team {
 	 );
   
   function __construct($abbrev) {
-  
+  	echo "We are constructing a team up in here! The abbrev val is {$abbrev}.<br>";
   	// Setup team names, abbreviations, and league
   	if ( $abbrev && $abbrev != '' ) {
   		$this->abbrev = $abbrev;
-  		if ( in_array( $this->abbrev, self::$abbrevs ) ) {
+  		
+  		if ( array_key_exists( $this->abbrev, self::$abbrevs ) ) {
   			$t = self::$abbrevs[$this->abbrev];
   			$this->city = $t[0];
   			$this->name = $t[1];
