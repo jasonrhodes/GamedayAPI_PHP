@@ -13,7 +13,7 @@
 	      $this->gid = $gid;    
 	      $this->xml_data = GamedayFetcher::fetch_game_xml( $gid );
 	      
-	      var_dump( $this->xml_data );
+	      //var_dump( $this->xml_data );
 	      
 	      if ( $this->xml_data && !empty( $this->xml_data ) ) {
 	        $this->xml_doc = new SimpleXMLElement( $this->xml_data );

@@ -71,6 +71,10 @@ class Team {
   	
   }
   
+  public function get_games($year, $month, $day) {
+  
+  } 
+  
   
   
 }

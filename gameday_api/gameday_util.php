@@ -3,6 +3,19 @@
 	# This class provides a variety of utility methods that are used in other classes
 	class GamedayUtil {
 	  
+	  public static function get_games_by_day( $year, $month, $day ) {
+	  	if (!$year || !$month || !$day ) return false;
+	  	$sb = GamedayFetcher::fetch_scoreboard( $year, $month, $day );
+	  	return $sb;
+	  }
+	  
+	  public static function get_games_today() {
+	  	$year = date("Y");
+	  	$month = date("n");
+	  	$day = date("j");
+	  	return self::get_games_by_day( $year, $month, $day );
+	  }
+	  
 	  # Parses a string with the date format of YYYYMMDD into an array
 	  # with the following elements:
 	  #    [0] = year
